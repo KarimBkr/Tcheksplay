@@ -16,6 +16,7 @@ import { PlayersListScreen } from '@/features/players/PlayersListScreen';
 import { PlayerProfileScreen } from '@/features/players/PlayerProfileScreen';
 import { TeamsListScreen } from '@/features/teams/TeamsListScreen';
 import { TeamProfileScreen } from '@/features/teams/TeamProfileScreen';
+import { FeedScreen } from '@/features/feed/FeedScreen';
 
 const rootRoute = createRootRoute({ component: RootLayout });
 
@@ -88,7 +89,7 @@ const teamDetailRoute = createRoute({
 const feedRoute = createRoute({
   getParentRoute: () => authLayout,
   path: '/feed',
-  component: () => <PlaceholderPage title="Actualités" />,
+  component: FeedScreen,
 });
 
 const mediaRoute = createRoute({
