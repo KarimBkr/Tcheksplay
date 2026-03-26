@@ -93,23 +93,3 @@ export interface Registration {
   submittedAt: string;
 }
 
-export type NavItem =
-  | 'home'
-  | 'matches'
-  | 'rankings'
-  | 'players'
-  | 'teams'
-  | 'media'
-  | 'solidarity'
-  | 'profile'
-  | 'liveMatch'
-  | 'matchDetail'
-  | 'teamProfile'
-  | 'rewards'
-  | 'feed'
-  | 'sponsors'
-  | 'venues'
-  | 'registration'
-  | 'rules'
-  | 'admin'
-  | 'account';
