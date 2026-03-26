@@ -7,6 +7,7 @@ import { RootLayout } from './layouts/RootLayout';
 import { AuthLayout } from './layouts/AuthLayout';
 import { LoginScreen } from '@/features/auth/LoginScreen';
 import { AccountScreen } from '@/features/account/AccountScreen';
+import { HomeScreen } from '@/features/home/HomeScreen';
 
 const rootRoute = createRootRoute({ component: RootLayout });
 
@@ -25,7 +26,7 @@ const authLayout = createRoute({
 const homeRoute = createRoute({
   getParentRoute: () => authLayout,
   path: '/',
-  component: () => <PlaceholderPage title="Accueil" />,
+  component: HomeScreen,
 });
 
 const matchesRoute = createRoute({
