@@ -17,6 +17,13 @@ import { PlayerProfileScreen } from '@/features/players/PlayerProfileScreen';
 import { TeamsListScreen } from '@/features/teams/TeamsListScreen';
 import { TeamProfileScreen } from '@/features/teams/TeamProfileScreen';
 import { FeedScreen } from '@/features/feed/FeedScreen';
+import { MediaScreen } from '@/features/media/MediaScreen';
+import { RewardsScreen } from '@/features/rewards/RewardsScreen';
+import { SolidarityScreen } from '@/features/solidarity/SolidarityScreen';
+import { SponsorsScreen } from '@/features/sponsors/SponsorsScreen';
+import { VenuesScreen } from '@/features/venues/VenuesScreen';
+import { RulesScreen } from '@/features/rules/RulesScreen';
+import { RegistrationScreen } from '@/features/registration/RegistrationScreen';
 
 const rootRoute = createRootRoute({ component: RootLayout });
 
@@ -95,43 +102,43 @@ const feedRoute = createRoute({
 const mediaRoute = createRoute({
   getParentRoute: () => authLayout,
   path: '/media',
-  component: () => <PlaceholderPage title="Médias" />,
+  component: MediaScreen,
 });
 
 const rewardsRoute = createRoute({
   getParentRoute: () => authLayout,
   path: '/rewards',
-  component: () => <PlaceholderPage title="Récompenses" />,
+  component: RewardsScreen,
 });
 
 const solidarityRoute = createRoute({
   getParentRoute: () => authLayout,
   path: '/solidarity',
-  component: () => <PlaceholderPage title="Solidarité" />,
+  component: SolidarityScreen,
 });
 
 const sponsorsRoute = createRoute({
   getParentRoute: () => authLayout,
   path: '/sponsors',
-  component: () => <PlaceholderPage title="Partenaires" />,
+  component: SponsorsScreen,
 });
 
 const venuesRoute = createRoute({
   getParentRoute: () => authLayout,
   path: '/venues',
-  component: () => <PlaceholderPage title="Terrains" />,
+  component: VenuesScreen,
 });
 
 const registrationRoute = createRoute({
   getParentRoute: () => authLayout,
   path: '/registration',
-  component: () => <PlaceholderPage title="Inscription" />,
+  component: RegistrationScreen,
 });
 
 const rulesRoute = createRoute({
   getParentRoute: () => authLayout,
   path: '/rules',
-  component: () => <PlaceholderPage title="Règlement" />,
+  component: RulesScreen,
 });
 
 const accountRoute = createRoute({
