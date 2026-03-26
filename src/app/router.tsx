@@ -11,6 +11,7 @@ import { HomeScreen } from '@/features/home/HomeScreen';
 import { MatchesScreen } from '@/features/matches/MatchesScreen';
 import { MatchDetailScreen } from '@/features/matches/MatchDetailScreen';
 import { LiveMatchScreen } from '@/features/matches/LiveMatchScreen';
+import { RankingsScreen } from '@/features/rankings/RankingsScreen';
 
 const rootRoute = createRootRoute({ component: RootLayout });
 
@@ -53,7 +54,7 @@ const liveMatchRoute = createRoute({
 const rankingsRoute = createRoute({
   getParentRoute: () => authLayout,
   path: '/rankings',
-  component: () => <PlaceholderPage title="Classements" />,
+  component: RankingsScreen,
 });
 
 const playersRoute = createRoute({
