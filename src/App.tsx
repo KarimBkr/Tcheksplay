@@ -1,7 +1,13 @@
-import { TcheksplayDashboard } from './components/generated/TcheksplayDashboard';
+import { RouterProvider } from '@tanstack/react-router';
+import { AuthProvider } from '@/features/auth/AuthContext';
+import { router } from '@/app/router';
 
 function App() {
-  return <TcheksplayDashboard />;
+  return (
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  );
 }
 
 export default App;
