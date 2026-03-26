@@ -8,6 +8,9 @@ import { AuthLayout } from './layouts/AuthLayout';
 import { LoginScreen } from '@/features/auth/LoginScreen';
 import { AccountScreen } from '@/features/account/AccountScreen';
 import { HomeScreen } from '@/features/home/HomeScreen';
+import { MatchesScreen } from '@/features/matches/MatchesScreen';
+import { MatchDetailScreen } from '@/features/matches/MatchDetailScreen';
+import { LiveMatchScreen } from '@/features/matches/LiveMatchScreen';
 
 const rootRoute = createRootRoute({ component: RootLayout });
 
@@ -32,19 +35,19 @@ const homeRoute = createRoute({
 const matchesRoute = createRoute({
   getParentRoute: () => authLayout,
   path: '/matches',
-  component: () => <PlaceholderPage title="Matchs" />,
+  component: MatchesScreen,
 });
 
 const matchDetailRoute = createRoute({
   getParentRoute: () => authLayout,
   path: '/matches/$matchId',
-  component: () => <PlaceholderPage title="Détail Match" />,
+  component: MatchDetailScreen,
 });
 
 const liveMatchRoute = createRoute({
   getParentRoute: () => authLayout,
   path: '/matches/live',
-  component: () => <PlaceholderPage title="Match en direct" />,
+  component: LiveMatchScreen,
 });
 
 const rankingsRoute = createRoute({
