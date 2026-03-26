@@ -12,6 +12,10 @@ import { MatchesScreen } from '@/features/matches/MatchesScreen';
 import { MatchDetailScreen } from '@/features/matches/MatchDetailScreen';
 import { LiveMatchScreen } from '@/features/matches/LiveMatchScreen';
 import { RankingsScreen } from '@/features/rankings/RankingsScreen';
+import { PlayersListScreen } from '@/features/players/PlayersListScreen';
+import { PlayerProfileScreen } from '@/features/players/PlayerProfileScreen';
+import { TeamsListScreen } from '@/features/teams/TeamsListScreen';
+import { TeamProfileScreen } from '@/features/teams/TeamProfileScreen';
 
 const rootRoute = createRootRoute({ component: RootLayout });
 
@@ -60,25 +64,25 @@ const rankingsRoute = createRoute({
 const playersRoute = createRoute({
   getParentRoute: () => authLayout,
   path: '/players',
-  component: () => <PlaceholderPage title="Joueurs" />,
+  component: PlayersListScreen,
 });
 
 const playerDetailRoute = createRoute({
   getParentRoute: () => authLayout,
   path: '/players/$playerId',
-  component: () => <PlaceholderPage title="Profil Joueur" />,
+  component: PlayerProfileScreen,
 });
 
 const teamsRoute = createRoute({
   getParentRoute: () => authLayout,
   path: '/teams',
-  component: () => <PlaceholderPage title="Équipes" />,
+  component: TeamsListScreen,
 });
 
 const teamDetailRoute = createRoute({
   getParentRoute: () => authLayout,
   path: '/teams/$teamId',
-  component: () => <PlaceholderPage title="Profil Équipe" />,
+  component: TeamProfileScreen,
 });
 
 const feedRoute = createRoute({
