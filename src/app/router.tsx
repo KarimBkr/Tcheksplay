@@ -6,13 +6,15 @@ import {
 } from '@tanstack/react-router';
 import { RootLayout } from './layouts/RootLayout';
 import { AuthLayout } from './layouts/AuthLayout';
+import { LoginScreen } from '@/features/auth/LoginScreen';
+import { AccountScreen } from '@/features/account/AccountScreen';
 
 const rootRoute = createRootRoute({ component: RootLayout });
 
 const loginRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/login',
-  component: () => <PlaceholderPage title="Connexion" />,
+  component: LoginScreen,
 });
 
 const authLayout = createRoute({
@@ -126,7 +128,7 @@ const rulesRoute = createRoute({
 const accountRoute = createRoute({
   getParentRoute: () => authLayout,
   path: '/account',
-  component: () => <PlaceholderPage title="Mon Compte" />,
+  component: AccountScreen,
 });
 
 const moreRoute = createRoute({
