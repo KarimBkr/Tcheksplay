@@ -24,6 +24,7 @@ import { SponsorsScreen } from '@/features/sponsors/SponsorsScreen';
 import { VenuesScreen } from '@/features/venues/VenuesScreen';
 import { RulesScreen } from '@/features/rules/RulesScreen';
 import { RegistrationScreen } from '@/features/registration/RegistrationScreen';
+import { AdminScreen } from '@/features/admin/AdminScreen';
 
 const rootRoute = createRootRoute({ component: RootLayout });
 
@@ -154,9 +155,9 @@ const moreRoute = createRoute({
 });
 
 const adminRoute = createRoute({
-  getParentRoute: () => authLayout,
+  getParentRoute: () => rootRoute,
   path: '/admin',
-  component: () => <PlaceholderPage title="Administration" />,
+  component: AdminScreen,
 });
 
 function PlaceholderPage({ title }: { title: string }) {
@@ -176,6 +177,7 @@ function PlaceholderPage({ title }: { title: string }) {
 
 const routeTree = rootRoute.addChildren([
   loginRoute,
+  adminRoute,
   authLayout.addChildren([
     homeRoute,
     matchesRoute,
@@ -196,7 +198,6 @@ const routeTree = rootRoute.addChildren([
     rulesRoute,
     accountRoute,
     moreRoute,
-    adminRoute,
   ]),
 ]);
 
